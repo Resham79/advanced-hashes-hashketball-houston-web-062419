@@ -3,7 +3,7 @@ require "pry"
 
 
 def game_hash 
-  game_hash = {
+  {
   :home => {
     :team_name => "Brooklyn Nets",
     :colors => [
@@ -181,10 +181,29 @@ end
     
     
 def team_names
-  game_hash.each do |location, team|
+  game_hash.collect do |location, team|
     #binding.pry
     team[:team_name]
   end
 end
     
-    
+def player_numbers(team_name)
+  array = []
+  game_hash.collect do |location, team|
+    if team[:team_name] == team_name
+      team[:players].collect do |player|
+        array.push(player[:number].to_i)
+        #binding.pry
+      end
+    end
+  end
+  array
+end   
+
+def player_stats(name)
+  game_hash.collect do |location, team|
+    team[:players].collect do |player|
+        binding.pry
+    end
+  end
+end
