@@ -203,7 +203,7 @@ end
 def player_stats(name)
   game_hash.collect do |location, team|
     team[:players].collect do |player|
-        binding.pry
+        #binding.pry
     end
   end
 end
